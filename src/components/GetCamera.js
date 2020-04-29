@@ -49,27 +49,29 @@ const GetCamera = ({ resource }) => {
             className="screen"
             id="myCam"
             title="myCam"
-            width="900"
-            height="600"
             src={cam.player.lifetime.embed}
             key={cam}
             alt="webcam"
           />
           <p className="camTitle">{cam.title}</p>
+          <label>Pick a country </label>
+          <select
+            className="ui dropdown"
+            onChange={(event) => setCountryId(event.target.value)}
+          >
+            {countryList
+              .sort((country1, country2) => {
+                return country2.count - country1.count;
+              })
+              .map((list, i) => (
+                <option key={i} value={list.id}>
+                  {list.name} ({list.count} webcams)
+                </option>
+              ))}
+          </select>
         </div>
       ))}
     </ul>
-    /* WIP 
-    <ul>
-
-      {countryList.map((list, i ) => (
-        <li>list</li>
-
-      ))}
-
-
-    </ul>
-    */
   );
 };
 
