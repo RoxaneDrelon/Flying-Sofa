@@ -6,8 +6,8 @@ import "./GetCamera.css";
 const GetCamera = ({ resource }) => {
   const [webcams, setWebcams] = useState([]);
   const [countryList, setList] = useState([]);
+  const [countryId, setCountryId] = useState("FR");
 
-  /* WIP
   useEffect(() => {
     const API_KEY = process.env.REACT_APP_API_KEY;
     const response = axios
@@ -16,15 +16,9 @@ const GetCamera = ({ resource }) => {
       )
       .then(({ data }) => {
         console.log("data1", data.result.countries);
-        setList(data);
+        setList(data.result.countries);
       });
-  }, []);
-
-  */
-
-  useEffect(() => {
-    const API_KEY = process.env.REACT_APP_API_KEY;
-    const response = axios
+    const response2 = axios
       .get(
         `https://api.windy.com/api/webcams/v2/list/${resource}/limit=1?show=webcams:image,location,player&key=${API_KEY}`
       )
@@ -32,7 +26,19 @@ const GetCamera = ({ resource }) => {
         console.log("data2", data);
         setWebcams(data.result.webcams);
       });
-  }, [resource]);
+  }, []);
+
+  useEffect(() => {
+    const API_KEY = process.env.REACT_APP_API_KEY;
+    const response3 = axios
+      .get(
+        `https://api.windy.com/api/webcams/v2/list/country=${countryId}/limit=1?show=webcams:image,location,player&key=${API_KEY}`
+      )
+      .then(({ data }) => {
+        console.log("data3", data);
+        setWebcams(data.result.webcams);
+      });
+  }, [countryId]);
 
   return (
     <ul>
