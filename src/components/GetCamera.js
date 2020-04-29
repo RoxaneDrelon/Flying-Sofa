@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "./GetCamera.css";
 
 const GetCamera = ({ resource }) => {
   const [webcams, setWebcams] = useState([]);
@@ -36,22 +37,21 @@ const GetCamera = ({ resource }) => {
   return (
     <ul>
       {webcams.map((cam, i) => (
-        <div>
-          <p>{cam.title}</p>
+        <div className="television">
           <iframe
-            className='"ui embed"'
+            className="screen"
             id="myCam"
             title="myCam"
-            width="300"
-            height="200"
+            width="900"
+            height="600"
             src={cam.player.lifetime.embed}
             key={cam}
             alt="webcam"
           />
+          <p className="camTitle">{cam.title}</p>
         </div>
       ))}
     </ul>
-
     /* WIP 
     <ul>
 

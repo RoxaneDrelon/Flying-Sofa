@@ -5,7 +5,8 @@ const App = (props) => {
   const [resource, setResource] = useState("country=DE");
 
   return (
-    <div>
+    <div className="background">
+      <GetCamera resource={resource} />
       <div>
         <button className="ui button" onClick={() => setResource("country=FR")}>
           FR
@@ -14,7 +15,6 @@ const App = (props) => {
           DE
         </button>
       </div>
-      <GetCamera resource={resource} />
     </div>
   );
 };
