@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import ResourceList from "./ResourceList";
-import UserList from "./UserList";
 
 const App = (props) => {
   const [resource, setResource] = useState("country=DE");
 
   return (
     <div>
-      <UserList />
       <div>
         <button className="ui button" onClick={() => setResource("country=FR")}>
           FR
