@@ -1,9 +1,19 @@
 .navbar {
-  background-color: grey;
-  height: 50px;
+  position: relative;
+  background-image: url("/img/bandeau.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120px;
+}
+
+.navbar img {
+  position: absolute;
+  height: 100%;
+  padding-left: 30px;
 }
 
 .navbar ul {
+  padding: 20px;
   display: flex;
   justify-content: center;
 }
@@ -22,6 +32,6 @@
 li a:hover {
   color: yellow;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
   text-shadow: 0px 0px 10px #ffffff;
 }
