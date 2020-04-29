@@ -6,6 +6,7 @@ import "./GetCamera.css";
 const GetCamera = ({ resource }) => {
   const [webcams, setWebcams] = useState([]);
   const [countryList, setList] = useState([]);
+  /*const [oneCountry, setOneCountry] = useState({}); ${oneCountry.count}*/
   const [countryId, setCountryId] = useState("FR");
 
   useEffect(() => {
