@@ -8,7 +8,7 @@ const ResourceList = ({ resource }) => {
     const API_KEY = process.env.REACT_APP_API_KEY;
     const response = axios
       .get(
-        `https://api.windy.com/api/webcams/v2/list/${resource}/limit=5?show=webcams:image,location,player&key=${API_KEY}`
+        `https://api.windy.com/api/webcams/v2/list/${resource}/limit=1?show=webcams:image,location,player&key=${API_KEY}`
       )
       .then(({ data }) => {
         console.log(data);
@@ -20,9 +20,9 @@ const ResourceList = ({ resource }) => {
     <ul>
       {webcams.map((cam, i) => (
         <div>
-          <p>{cam.id}</p>
           <p>{cam.title}</p>
           <iframe
+            className='"ui embed"'
             id="myCam"
             title="myCam"
             width="300"

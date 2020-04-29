@@ -9,8 +9,12 @@ const App = (props) => {
     <div>
       <UserList />
       <div>
-        <button onClick={() => setResource("country=FR")}>FR</button>
-        <button onClick={() => setResource("country=DE")}>DE</button>
+        <button className="ui button" onClick={() => setResource("country=FR")}>
+          FR
+        </button>
+        <button className="ui button" onClick={() => setResource("country=DE")}>
+          DE
+        </button>
       </div>
       <ResourceList resource={resource} />
     </div>
