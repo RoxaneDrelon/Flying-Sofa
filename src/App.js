@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ResourceList from "./ResourceList";
+import GetCamera from "./components/GetCamera";
 
 const App = (props) => {
   const [resource, setResource] = useState("country=DE");
@@ -14,7 +14,7 @@ const App = (props) => {
           DE
         </button>
       </div>
-      <ResourceList resource={resource} />
+      <GetCamera resource={resource} />
     </div>
   );
 };
