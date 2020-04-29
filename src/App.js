@@ -1,11 +1,10 @@
 import React from "react";
-import Wilder from "./components/Wilder";
+import WebcamDisplay from "./components/WebcamDisplay";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hi there !</h1>
-      <Wilder />
+      <WebcamDisplay />
     </div>
   );
 }
