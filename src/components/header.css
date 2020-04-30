@@ -4,6 +4,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 120px;
+  line-height: 70px;
+  border-bottom: 20px ridge rgb(143, 45, 20);
 }
 
 .navbar img {
@@ -24,7 +26,7 @@
 
 .navbar a {
   text-decoration: none;
-  font-size: larger;
+  font-size: 2rem;
   color: aliceblue;
   padding: 30px;
 }

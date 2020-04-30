@@ -44,31 +44,38 @@ const GetCamera = ({ resource }) => {
   return (
     <ul>
       {webcams.map((cam, i) => (
-        <div className="television">
-          <iframe
-            className="screen"
-            id="myCam"
-            title="myCam"
-            src={cam.player.lifetime.embed}
-            key={cam}
-            alt="webcam"
-          />
-          <p className="camTitle">{cam.title}</p>
-          <label>Pick a country </label>
-          <select
-            className="ui dropdown"
-            onChange={(event) => setCountryId(event.target.value)}
-          >
-            {countryList
-              .sort((country1, country2) => {
-                return country2.count - country1.count;
-              })
-              .map((list, i) => (
-                <option key={i} value={list.id}>
-                  {list.name} ({list.count} webcams)
-                </option>
-              ))}
-          </select>
+        <div className="teleContainer">
+          <div className="television">
+            <iframe
+              className="screen"
+              id="myCam"
+              title="myCam"
+              src={cam.player.lifetime.embed}
+              key={cam}
+              alt="webcam"
+            />
+            <p className="camTitle">{cam.title}</p>
+          </div>
+          <div className="telecommande">
+            <label className="PickACountry">
+              <div className="power"></div>
+              Pick a country{" "}
+            </label>
+            <select
+              className="ui dropdown"
+              onChange={(event) => setCountryId(event.target.value)}
+            >
+              {countryList
+                .sort((country1, country2) => {
+                  return country2.count - country1.count;
+                })
+                .map((list, i) => (
+                  <option key={i} value={list.id}>
+                    {list.name} ({list.count} webcams)
+                  </option>
+                ))}
+            </select>
+          </div>
         </div>
       ))}
     </ul>
