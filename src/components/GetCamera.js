@@ -5,39 +5,42 @@ import axios from "axios";
 const GetCamera = ({ resource }) => {
   const [webcam, setWebcam] = useState({});
   const [countryList, setList] = useState([]);
-  const [countryId, setCountryId] = useState("SE");
+  const [countryId, setCountryId] = useState("US");
+  const [index, setIndex] = useState(0);
+  const [nombreCam, setNombreCam] = useState(1);
 
   useEffect(() => {
     const API_KEY = process.env.REACT_APP_API_KEY;
-    const response = axios
+    axios
       .get(
         `https://api.windy.com/api/webcams/v2/list?show=countries&key=${API_KEY}`
       )
       .then(({ data }) => {
-        console.log("data1", data.result.countries);
         setList(data.result.countries);
       });
-    const response2 = axios
+    axios
       .get(
-        `https://api.windy.com/api/webcams/v2/list/${resource}/limit=1?show=webcams:image,location,player&key=${API_KEY}`
+        `https://api.windy.com/api/webcams/v2/list/country=US/limit=1?show=webcams:image,location,player&key=${API_KEY}`
       )
       .then(({ data }) => {
-        console.log("data2", data);
         setWebcam(data.result.webcams[0]);
       });
   }, []);
 
   useEffect(() => {
     const API_KEY = process.env.REACT_APP_API_KEY;
-    const response3 = axios
+    axios
       .get(
         `https://api.windy.com/api/webcams/v2/list/country=${countryId}/limit=15000?show=webcams:image,location,player&key=${API_KEY}`
       )
       .then(({ data }) => {
-        console.log("data3", data);
-        setWebcam(data.result.webcams[5]);
+        setNombreCam(data.result.webcams.length);
+        const getCam = () => {
+          setWebcam(data.result.webcams[index]);
+        };
+        getCam();
       });
-  }, [countryId]);
+  }, [countryId, index]);
 
   return (
     <div>
@@ -73,6 +76,15 @@ const GetCamera = ({ resource }) => {
             </option>
           ))}
       </select>
+      <div>
+        <input
+          type="button"
+          value="Random !"
+          onClick={() =>
+            setIndex(Math.floor(Math.random() * Math.floor(nombreCam)))
+          }
+        />
+      </div>
     </div>
   );
 };
