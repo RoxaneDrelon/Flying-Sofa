@@ -3,10 +3,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const GetCamera = ({ resource }) => {
-  const [webcams, setWebcams] = useState([]);
+  const [webcam, setWebcam] = useState({});
   const [countryList, setList] = useState([]);
-  /*const [oneCountry, setOneCountry] = useState({}); ${oneCountry.count}*/
-  const [countryId, setCountryId] = useState("FR");
+  const [countryId, setCountryId] = useState("SE");
 
   useEffect(() => {
     const API_KEY = process.env.REACT_APP_API_KEY;
@@ -24,7 +23,7 @@ const GetCamera = ({ resource }) => {
       )
       .then(({ data }) => {
         console.log("data2", data);
-        setWebcams(data.result.webcams);
+        setWebcam(data.result.webcams[0]);
       });
   }, []);
 
@@ -32,32 +31,32 @@ const GetCamera = ({ resource }) => {
     const API_KEY = process.env.REACT_APP_API_KEY;
     const response3 = axios
       .get(
-        `https://api.windy.com/api/webcams/v2/list/country=${countryId}/limit=1?show=webcams:image,location,player&key=${API_KEY}`
+        `https://api.windy.com/api/webcams/v2/list/country=${countryId}/limit=15000?show=webcams:image,location,player&key=${API_KEY}`
       )
       .then(({ data }) => {
         console.log("data3", data);
-        setWebcams(data.result.webcams);
+        setWebcam(data.result.webcams[5]);
       });
   }, [countryId]);
 
   return (
     <div>
       <ul>
-        {webcams.map((cam, i) => (
-          <div ke={i}>
-            <p>{cam.title}</p>
+        {webcam.player && (
+          <div>
+            <p>{webcam.title}</p>
             <iframe
               className='"ui embed"'
               id="myCam"
               title="myCam"
               width="300"
               height="200"
-              src={cam.player.lifetime.embed}
-              key={cam}
+              src={webcam.player.lifetime.embed}
+              allowFullScreen={true}
               alt="webcam"
             />
           </div>
-        ))}
+        )}
       </ul>
       <label>Pick a country </label>
       <select
