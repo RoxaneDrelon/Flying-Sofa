@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import GetCamera from "./components/GetCamera";
 import Header from "./components/header";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -13,7 +12,6 @@ const App = (props) => {
     <div className="background">
       <div>
         <Header />
-        <GetCamera resource={resource} />
         <main>
           <Switch>
             <Route exact path="/" component={Home} />
