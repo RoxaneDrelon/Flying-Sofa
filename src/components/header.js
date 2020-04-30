@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <header>
             <div className="navbar">
-                <img src="/img/windy.png" alt="logo" />
+                <img src="/img/windyt.png" alt="logo" />
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
