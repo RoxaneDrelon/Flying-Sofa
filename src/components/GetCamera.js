@@ -54,7 +54,7 @@ const GetCamera = ({ resource }) => {
               title="myCam"
               width="300"
               height="200"
-              src={webcam.player.lifetime.embed}
+              src={webcam.player.lifetime.embed + "?autoplay=1"}
               allowFullScreen={true}
               alt="webcam"
             />
