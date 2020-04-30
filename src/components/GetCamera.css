@@ -1,5 +1,7 @@
 .background {
   background-image: url("/img/47937.jpg");
+  height: 95vh;
+  width: 100vw;
 }
 
 .television {

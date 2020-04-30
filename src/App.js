@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Team from "./pages/Team";
 import { Switch, Route } from "react-router-dom";
+import Footer from "./components/footer";
 
 const App = (props) => {
   const [resource, setResource] = useState("country=DE");
@@ -34,7 +35,9 @@ const App = (props) => {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
+
   );
 };
 

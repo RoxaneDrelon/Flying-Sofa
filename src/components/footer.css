@@ -1,0 +1,11 @@
+.footer {
+  border-top: 25px ridge rgb(143, 45, 20);
+  background-image: url("/img/plancher.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.styleimg {
+  height: 15vw;
+  width: 100vw;
+}
