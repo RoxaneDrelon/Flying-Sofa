@@ -1,0 +1,25 @@
+.About {
+  display: flex;
+  margin-top: 50px;
+}
+
+.About ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.About li {
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+.About h2 {
+  font-style: normal;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.About p {
+  text-align: justify;
+}

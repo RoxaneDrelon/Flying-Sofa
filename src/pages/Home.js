@@ -11,8 +11,6 @@ const Home = (props) => {
             <GetCamera resource={resource} />
         </div>
 
-
-
     );
 }
 
