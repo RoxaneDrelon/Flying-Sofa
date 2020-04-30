@@ -9,6 +9,8 @@ const Home = (props) => {
       <GetCamera resource={resource} />
     </div>
   );
-};
+
+
+}
 
 export default Home;
