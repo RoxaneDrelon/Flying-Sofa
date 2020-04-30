@@ -61,20 +61,22 @@ const GetCamera = ({ resource }) => {
               <div className="power"></div>
               Pick a country{" "}
             </label>
-            <select
-              className="ui dropdown"
-              onChange={(event) => setCountryId(event.target.value)}
-            >
-              {countryList
-                .sort((country1, country2) => {
-                  return country2.count - country1.count;
-                })
-                .map((list, i) => (
-                  <option key={i} value={list.id}>
-                    {list.name} ({list.count} webcams)
-                  </option>
-                ))}
-            </select>
+            <div className="telecommandeCenter">
+              <select
+                className="ui dropdown"
+                onChange={(event) => setCountryId(event.target.value)}
+              >
+                {countryList
+                  .sort((country1, country2) => {
+                    return country2.count - country1.count;
+                  })
+                  .map((list, i) => (
+                    <option key={i} value={list.id}>
+                      {list.name} ({list.count} webcams)
+                    </option>
+                  ))}
+              </select>
+            </div>
           </div>
         </div>
       ))}

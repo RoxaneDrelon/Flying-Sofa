@@ -22,15 +22,25 @@
 
 .telecommande {
   background-color: rgb(36, 46, 46);
+  border: 5px solid black;
+  -webkit-box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
   border-radius: 5%;
   padding: 15px;
-  padding-bottom: 70vh;
+  padding-bottom: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: auto 5%;
   margin-top: 20px;
+}
+
+.telecommandeCenter {
+  background-color: rgb(87, 100, 100);
+  padding: 20px;
+  padding-bottom: 60vh;
 }
 
 .screen {
