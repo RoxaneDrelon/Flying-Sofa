@@ -6,14 +6,6 @@ const App = (props) => {
 
   return (
     <div>
-      <div>
-        <button className="ui button" onClick={() => setResource("country=FR")}>
-          FR
-        </button>
-        <button className="ui button" onClick={() => setResource("country=DE")}>
-          DE
-        </button>
-      </div>
       <GetCamera resource={resource} />
     </div>
   );
