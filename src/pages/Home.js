@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import GetCamera from "../components/GetCamera";
 
-const Home = () => {
+const Home = (props) => {
+
+    const [resource, setResource] = useState("country=DE");
+
     return (
 
-        <div>home</div>
+        <div>
+            <GetCamera resource={resource} />
+        </div>
 
 
 

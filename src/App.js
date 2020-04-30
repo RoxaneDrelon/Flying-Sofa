@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import GetCamera from "./components/GetCamera";
+
 import Header from "./components/header";
 import Home from "./pages/Home";
 import About from "./pages/About";
