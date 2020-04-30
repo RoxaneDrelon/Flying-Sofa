@@ -20,20 +20,6 @@ const App = (props) => {
             <Route exact path="/team" component={Team} />
           </Switch>
         </main>
-        <div>
-          <button
-            className="ui button"
-            onClick={() => setResource("country=FR")}
-          >
-            FR
-          </button>
-          <button
-            className="ui button"
-            onClick={() => setResource("country=DE")}
-          >
-            DE
-          </button>
-        </div>
       </div>
       <Footer />
     </div>
